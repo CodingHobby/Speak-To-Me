@@ -4,20 +4,21 @@ $(function () {
 	const input = $('#text')
 
 	window.speechSynthesis.onvoiceschanged = function () {
-		$('#radios').html('')
+		$('#select').html('')
 		var langs = speechSynthesis.getVoices().map(voice => voice.lang)
 		var prevLang
 		langs.forEach(lang => {
 			if (lang !== prevLang) {
 				if (lang != curLang) {
-					$('#radios').append('<li><input type="radio" name="radio" class="radio" value="' + lang + '"> ' + lang + '</li>')
+					$('#select').append('<option name="radio" class="radio"> ' + lang + '</option>')
 				} else {
-					$('#radios').append('<li><input type="radio" checked="checked" name="radio" class="radio" value="' + lang + '"> ' + lang + '</li>')
+					$('#select').append('<option checked="checked" name="radio" class="radio""> ' + lang + '</option>')
 				}
 				prevLang = lang
 			}
-			$('#radioForm input').on('change', function () {
-				curLang = $('input:checked', '#radioForm').val()
+
+			$('#select').on('change', function() {
+				curLang = $('#select').val()
 			})
 		})
 	}
