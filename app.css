@@ -1,4 +1,4 @@
-body {
+.stuff {
 	text-align: center;
 }
 
@@ -8,6 +8,25 @@ h1 {
 	border-bottom: 1px solid black;
 	width: 600px;
 	display: inline-block;
+}
+
+#radioForm {
+	text-align: left;
+	display: block;
+	margin: 20px 10%;
+}
+
+ul {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	padding: 0;
+	flex-wrap: wrap;
+}
+
+li {
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 .btn {
