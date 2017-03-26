@@ -1,6 +1,5 @@
 $(function () {
 	var curLang = navigator.languge || 'en-US'
-	console.log(curLang)
 
 	const input = $('#text')
 
@@ -21,7 +20,6 @@ $(function () {
 				curLang = $('input:checked', '#radioForm').val()
 			})
 		})
-
 	}
 
 	$('#say').click(function (e) {
@@ -42,4 +40,5 @@ function sayStuff(stuff, lang) {
 	const msg = new SpeechSynthesisUtterance(stuff)
 	msg.lang = lang
 	window.speechSynthesis.speak(msg)
+	$('#text').val('')
 }
