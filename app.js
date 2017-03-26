@@ -12,7 +12,7 @@ $(function () {
 				if (lang != curLang) {
 					$('#select').append('<option name="radio" class="radio"> ' + lang + '</option>')
 				} else {
-					$('#select').append('<option checked="checked" name="radio" class="radio" selected> ' + lang + '</option>')
+					$('#select').append('<option name="radio" class="radio" selected> ' + lang + '</option>')
 				}
 				prevLang = lang
 			}
